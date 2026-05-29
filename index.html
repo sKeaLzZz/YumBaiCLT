@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YumBai CLT | Authentic Cambodian Street Food</title>
     
-    <!-- Google Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
     </style>
     
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -92,7 +90,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
         }
 
@@ -108,6 +106,13 @@
 
         .nav-links a:hover {
             color: var(--gold);
+        }
+
+        .nav-divider {
+            color: var(--gold);
+            opacity: 0.5;
+            user-select: none;
+            font-size: 0.9rem;
         }
 
         /* Hero Layout */
@@ -167,7 +172,78 @@
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Grand Transition Divider (Unique for above Combos) */
+        .grand-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5rem;
+            gap: 15px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .grand-line {
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.8;
+        }
+
+        .grand-diamond {
+            width: 12px;
+            height: 12px;
+            border: 2px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .grand-diamond.center {
+            width: 18px;
+            height: 18px;
+            background-color: var(--gold);
+        }
+
+        /* Standard Cambodian/Kbach Style Section Divider (For Headers) */
+        .kbach-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.5rem auto 1.5rem;
+            gap: 12px;
+        }
+        
+        .kbach-line {
+            height: 1px;
+            width: 80px;
+            background-color: var(--gold);
+            opacity: 0.7;
+        }
+        
+        .kbach-dot {
+            width: 4px;
+            height: 4px;
+            background-color: var(--gold);
+            border-radius: 50%;
+        }
+        
+        .kbach-diamond {
+            width: 14px;
+            height: 14px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .kbach-diamond::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background-color: var(--gold);
         }
 
         .section-header p {
@@ -315,13 +391,13 @@
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 0.5rem; /* Space between icon and text */
+            gap: 0.5rem;
             transition: color 0.3s ease;
         }
 
         .footer-contact a i {
             font-size: 1.2rem;
-            color: var(--gold); /* Gives icons a pop of your brand color */
+            color: var(--gold);
         }
 
         .footer-contact a:hover, 
@@ -349,11 +425,15 @@
                 width: 100%;
                 background-color: var(--bg-base);
                 padding: 1rem 0;
+                gap: 0;
             }
             .nav-links a {
-                padding: 0.5rem 0;
+                padding: 0.8rem 0;
                 width: 100%;
                 text-align: center;
+            }
+            .nav-divider {
+                display: none; /* Hides the navigation dividers on mobile */
             }
             .menu-toggle:checked ~ .nav-links {
                 display: flex;
@@ -381,14 +461,16 @@
             <img src="YumBai CLT Circle Logo Transparent White.png" alt="YumBai CLT">
         </a>
         
-        <!-- CSS Only Hamburger Menu -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger">&#9776;</label>
         
         <div class="nav-links">
             <a href="#combos">Combos</a>
+            <span class="nav-divider">|</span>
             <a href="#menu">Menu</a>
+            <span class="nav-divider">|</span>
             <a href="#specs">Ingredients</a>
+            <span class="nav-divider">|</span>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -404,8 +486,23 @@
     </header>
 
     <section id="combos">
+        <div class="grand-divider">
+            <div class="grand-line"></div>
+            <div class="grand-diamond"></div>
+            <div class="grand-diamond center"></div>
+            <div class="grand-diamond"></div>
+            <div class="grand-line"></div>
+        </div>
+
         <div class="section-header">
             <h2>Signature Combos</h2>
+            <div class="kbach-divider">
+                <div class="kbach-line"></div>
+                <div class="kbach-dot"></div>
+                <div class="kbach-diamond"></div>
+                <div class="kbach-dot"></div>
+                <div class="kbach-line"></div>
+            </div>
             <p>Complete meals served with a side of jasmine rice, 2 chicken eggrolls, and our house-pickled veggies.</p>
         </div>
         
@@ -436,29 +533,36 @@
         </div>
     </section>
 
-    <section id="menu" style="background-color: var(--bg-base);">
+    <section id="menu" style="background-color: var(--bg-surface);">
         <div class="section-header">
             <h2>Menu</h2>
+            <div class="kbach-divider">
+                <div class="kbach-line"></div>
+                <div class="kbach-dot"></div>
+                <div class="kbach-diamond"></div>
+                <div class="kbach-dot"></div>
+                <div class="kbach-line"></div>
+            </div>
             <p>Add extra portions of your favorite items from the grill.</p>
         </div>
 
         <div class="menu-grid">
-            <div class="menu-card">
+            <div class="menu-card" style="background-color: var(--bg-base);">
                 <div class="card-img"><img src="Beef Sticks Transparent.png" alt="Beef Sticks"></div>
                 <h3>Beef Sticks</h3>
                 <p>Grilled beef skewers deeply marinated in aromatic spices and gluten-free soy.</p>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" style="background-color: var(--bg-base);">
                 <div class="card-img"><img src="Chicken Wings Transparent.png" alt="Chicken Wings"></div>
                 <h3>Chicken Wings</h3>
                 <p>Whole wings rubbed with turmeric and garlic, grilled to perfection.</p>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" style="background-color: var(--bg-base);">
                 <div class="card-img"><img src="Meatballs Transparent.png" alt="Beef Meatballs"></div>
                 <h3>Beef Meatballs</h3>
                 <p>House-crafted with peppers and savory cheeses, skewered and charred.</p>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" style="background-color: var(--bg-base);">
                 <div class="card-img"><img src="Eggrolls Transparent.png" alt="Chicken Eggrolls"></div>
                 <h3>Chicken Eggrolls</h3>
                 <p>Crispy hand-rolled wraps packed with chicken, cabbage, carrots, and noodles.</p>
@@ -469,6 +573,13 @@
     <section id="specs">
         <div class="section-header">
             <h2>Kitchen Specs</h2>
+            <div class="kbach-divider">
+                <div class="kbach-line"></div>
+                <div class="kbach-dot"></div>
+                <div class="kbach-diamond"></div>
+                <div class="kbach-dot"></div>
+                <div class="kbach-line"></div>
+            </div>
             <p>Transparency matters. Here is exactly what goes into our food.</p>
         </div>
 
@@ -527,7 +638,6 @@
             <img src="YumBai CLT Hope Transparent Logo.png" alt="YumBai CLT Authentic Street Food">
         </div>
         
-        <!-- Updated footer contact section with icons and dividers -->
         <div class="footer-contact">
             <a href="tel:17046093104">
                 <i class="fa-solid fa-phone"></i> Call Us
