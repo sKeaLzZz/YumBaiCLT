@@ -40,12 +40,21 @@
         .dietary-alert {
             background-color: var(--gold);
             color: var(--bg-base);
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
             padding: 0.5rem 1rem;
             font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
+        }
+
+        .dietary-alert img {
+            height: 22px;
+            object-fit: contain;
+            opacity: 0.8;
         }
 
         /* Navigation */
@@ -125,6 +134,14 @@
             gap: 2rem;
         }
 
+        .hero-title-logo {
+            max-width: 320px;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+        }
+
         .hero-text h1 {
             font-size: 4.5rem;
             line-height: 1.1;
@@ -158,9 +175,35 @@
             border: 2px solid rgba(212, 175, 55, 0.3);
         }
 
-        /* Section Global */
+        /* Section Global & Watermarks */
         section {
             padding: 6rem 5%;
+        }
+
+        .watermark-section {
+            position: relative;
+        }
+
+        .watermark-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-image: url('YumBai CLT Circle Logo Transparent White.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 500px;
+            opacity: 0.03; /* Faint watermark to elegantly fill empty spaces */
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .watermark-section > * {
+            position: relative;
+            z-index: 1;
         }
 
         .section-header {
@@ -371,7 +414,7 @@
         }
 
         .footer-logo img {
-            max-height: 250px;
+            max-height: 180px;
             background-color: transparent;
             object-fit: contain;
         }
@@ -413,6 +456,7 @@
         /* Responsive Breakpoints */
         @media (max-width: 900px) {
             .hero { grid-template-columns: 1fr; text-align: center; padding-top: 4rem; }
+            .hero-title-logo { margin: 0 auto 1.5rem auto; }
             .hero-text p { margin: 0 auto 2rem; }
             
             /* Enable Hamburger Menu */
@@ -453,7 +497,9 @@
 <body>
 
     <div class="dietary-alert">
-        No MSG • No Eggs • No Nuts • No Seafood/Shellfish 
+        <img src="YumBai CLT Circle Logo Transparent Black.png" alt="YumBai Pattern">
+        <span>No MSG • No Eggs • No Nuts • No Seafood/Shellfish</span>
+        <img src="YumBai CLT Circle Logo Transparent Black.png" alt="YumBai Pattern">
     </div>
 
     <nav>
@@ -477,6 +523,7 @@
 
     <header class="hero">
         <div class="hero-text">
+            <img src="YumBai CLT Hope Transparent Title Logo.png" alt="YumBai CLT Title" class="hero-title-logo">
             <h1>Eat Rice.<br><span>Eat Well.</span></h1>
             <p>Bringing authentic Cambodian street food to Charlotte, NC and the surrounding areas since 2024</p>
         </div>
@@ -533,7 +580,7 @@
         </div>
     </section>
 
-    <section id="menu" style="background-color: var(--bg-surface);">
+    <section id="menu" class="watermark-section" style="background-color: var(--bg-surface);">
         <div class="section-header">
             <h2>Menu</h2>
             <div class="kbach-divider">
@@ -570,7 +617,7 @@
         </div>
     </section>
 
-    <section id="specs">
+    <section id="specs" class="watermark-section">
         <div class="section-header">
             <h2>Kitchen Specs</h2>
             <div class="kbach-divider">
@@ -629,13 +676,13 @@
         </div>
         
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="Ingredients.png" target="_blank" style="color: var(--gold); text-decoration: underline;">~The YumBai Ingredients~</a>
+            <a href="Ingredients.png" target="_blank" style="color: var(--gold); text-decoration: underline; position: relative; z-index: 1;">~The YumBai Ingredients~</a>
         </div>
     </section>
 
     <footer id="contact">
         <div class="footer-logo">
-            <img src="YumBai CLT Hope Transparent Logo.png" alt="YumBai CLT Authentic Street Food">
+            <img src="YumBai CLT Hope Transparent Title Logo.png" alt="YumBai CLT Authentic Street Food">
         </div>
         
         <div class="footer-contact">
