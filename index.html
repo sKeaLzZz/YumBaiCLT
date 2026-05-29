@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumBai CLT | Khmer Street Food</title>
+    <style>
+        :root {
+            --primary: #d9381e; /* Vibrant chili red */
+            --secondary: #f2a900; /* Warm street food yellow */
+            --dark: #2b2b2b;
+            --light: #fafafa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--light);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b82d16;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--secondary);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item h4 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px dashed #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .menu-item .price {
+            color: var(--dark);
+        }
+
+        /* Schedule Section */
+        .schedule-container {
+            background: var(--dark);
+            color: var(--light);
+            padding: 3rem;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #444;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: bold;
+            color: var(--secondary);
+            width: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem;
+            border-top: 4px solid var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .nav-links {
+                display: none; /* Add a hamburger menu for full production */
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .schedule-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">YumBai CLT</a>
+        <div class="nav-links">
+            <a href="#about">Our Story</a>
+            <a href="#menu">Menu</a>
+            <a href="#schedule">Find the Truck</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>YumBai CLT</h1>
+        <p>Authentic Khmer Cambodian Street Food rolling through the Queen City.</p>
+        <a href="#schedule" class="btn">Find Us Today</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Established 2024</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Bringing the Streets of Phnom Penh to NC</h3>
+                <p>Started in 2024, YumBai CLT is on a mission to introduce the bold, aromatic, and savory flavors of Cambodian street food to Charlotte and the surrounding areas. "Yum Bai" translates to "Eat Rice" or "Let's Eat" in Khmer, and that's exactly what we want to share with our community.</p>
+                <br>
+                <p>From our signature lemongrass skewers to refreshing papaya salads, everything is made from scratch using traditional family recipes. Whether you're in South End, NoDa, or out in the suburbs, keep an eye out for the truck!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" style="background-color: #f0f0f0;">
+        <h2 class="section-title">On The Grill</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-item">
+                <h4>Sach Ko Ang <span class="price">$12</span></h4>
+                <p>Classic Cambodian beef skewers marinated in kroeung (lemongrass paste), grilled over open flames. Served with pickled papaya.</p>
+            </div>
+
+            <div class="menu-item">
+                <h4>Bok Lahong <span class="price">$10</span></h4>
+                <p>Spicy green papaya salad pounded in a mortar and pestle with tomatoes, long beans, peanuts, lime, and fish sauce.</p>
+            </div>
+
+            <div class="menu-item">
+                <h4>Slaab Moan Baok <span class="price">$14</span></h4>
+                <p>Crispy stuffed chicken wings filled with glass noodles, minced pork, and traditional spices. Served with sweet chili dipping sauce.</p>
+            </div>
+
+            <div class="menu-item">
+                <h4>Lort Cha <span class="price">$13</span></h4>
+                <p>Stir-fried short rice noodles (pin noodles) with bean sprouts, chives, topped with a fried egg and our signature sweet soy sauce.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule">
+        <h2 class="section-title">Weekly Route</h2>
+        <div class="schedule-container">
+            <div class="schedule-row">
+                <div class="day">Thursday</div>
+                <div class="location">Resident Culture Brewing (Plaza Midwood)</div>
+                <div class="time">5:00 PM - 9:00 PM</div>
+            </div>
+            <div class="schedule-row">
+                <div class="day">Friday</div>
+                <div class="location">Sycamore Brewing (South End)</div>
+                <div class="time">4:00 PM - 10:00 PM</div>
+            </div>
+            <div class="schedule-row">
+                <div class="day">Saturday</div>
+                <div class="location">Charlotte Regional Farmers Market</div>
+                <div class="time">8:00 AM - 2:00 PM</div>
+            </div>
+            <div class="schedule-row">
+                <div class="day">Sunday</div>
+                <div class="location">NoDa Brewing Company</div>
+                <div class="time">12:00 PM - 6:00 PM</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h2>YumBai CLT</h2>
+        <p>Charlotte, NC & Surrounding Areas</p>
+        <p style="margin: 15px 0;">booking@yumbaiclt.com | (555) 123-4567</p>
+        <p><small>&copy; 2026 YumBai CLT. All Rights Reserved.</small></p>
+    </footer>
+
+</body>
+</html>
