@@ -3,312 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YumBai CLT | Khmer Street Food</title>
+    <title>YumBai CLT | Authentic Khmer Street Food</title>
     <style>
+        /* Premium Dark-and-Gold Aesthetic */
         :root {
-            --primary: #d9381e; /* Vibrant chili red */
-            --secondary: #f2a900; /* Warm street food yellow */
-            --dark: #2b2b2b;
-            --light: #fafafa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --bg-dark: #121212;
+            --bg-panel: #1e1e1e;
+            --gold: #D4AF37;
+            --gold-hover: #F3E5AB;
+            --text-light: #f5f5f5;
+            --text-muted: #aaaaaa;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
-            background-color: var(--dark);
-            color: var(--light);
+        header {
+            background-color: #000;
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid var(--gold);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: var(--secondary);
+            color: var(--gold);
             text-decoration: none;
-            letter-spacing: 1px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .nav-links a {
-            color: var(--light);
+        nav a {
+            color: var(--text-light);
             text-decoration: none;
-            margin-left: 2rem;
+            margin-left: 1.5rem;
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--secondary);
+        nav a:hover {
+            color: var(--gold);
         }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            color: var(--light);
-            padding: 0 20px;
+            padding: 100px 20px;
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.8)), url('Combos.jpg') center/cover no-repeat;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
+            color: var(--gold);
             margin-bottom: 10px;
-            color: var(--secondary);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
             max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
         }
 
         .btn {
-            background-color: var(--primary);
-            color: var(--light);
+            background-color: var(--gold);
+            color: #000;
             padding: 12px 30px;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
             font-weight: bold;
+            border-radius: 4px;
             transition: background 0.3s;
         }
 
         .btn:hover {
-            background-color: #b82d16;
+            background-color: var(--gold-hover);
         }
 
-        /* Sections */
         section {
-            padding: 5rem 10%;
+            padding: 80px 5%;
         }
 
-        .section-title {
+        h2 {
             text-align: center;
+            color: var(--gold);
             font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary);
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 50px;
+            text-transform: uppercase;
         }
 
         /* Menu Section */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
 
         .menu-item {
-            background: white;
-            padding: 2rem;
+            background-color: var(--bg-panel);
+            border: 1px solid #333;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-bottom: 4px solid var(--secondary);
+            overflow: hidden;
             transition: transform 0.3s;
         }
 
         .menu-item:hover {
             transform: translateY(-5px);
+            border-color: var(--gold);
         }
 
-        .menu-item h4 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 2px dashed #eee;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+        .menu-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--gold);
         }
 
-        .menu-item .price {
-            color: var(--dark);
+        .menu-content {
+            padding: 20px;
         }
 
-        /* Schedule Section */
-        .schedule-container {
-            background: var(--dark);
-            color: var(--light);
-            padding: 3rem;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
+        .menu-content h3 {
+            color: var(--gold);
+            margin-top: 0;
         }
 
-        .schedule-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #444;
+        .allergy-warning {
+            font-size: 0.85rem;
+            color: #ff6b6b;
+            margin-top: 15px;
+            border-top: 1px dashed #444;
+            padding-top: 10px;
         }
 
-        .schedule-row:last-child {
-            border-bottom: none;
-        }
-
-        .day {
-            font-weight: bold;
-            color: var(--secondary);
-            width: 120px;
-        }
-
-        /* Footer */
+        /* Footer / Socials */
         footer {
-            background-color: var(--dark);
-            color: var(--light);
+            background-color: #000;
             text-align: center;
-            padding: 2rem;
-            border-top: 4px solid var(--primary);
+            padding: 40px 20px;
+            border-top: 2px solid var(--gold);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-            }
-            .nav-links {
-                display: none; /* Add a hamburger menu for full production */
-            }
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .schedule-row {
-                flex-direction: column;
-                gap: 5px;
-            }
+        .social-links a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            color: var(--text-light);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            margin-top: 20px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
+    <header>
         <a href="#" class="logo">YumBai CLT</a>
-        <div class="nav-links">
+        <nav>
             <a href="#about">Our Story</a>
             <a href="#menu">Menu</a>
-            <a href="#schedule">Find the Truck</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>YumBai CLT</h1>
-        <p>Authentic Khmer Cambodian Street Food rolling through the Queen City.</p>
-        <a href="#schedule" class="btn">Find Us Today</a>
+            <a href="#social">Connect</a>
+        </nav>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">Established 2024</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Bringing the Streets of Phnom Penh to NC</h3>
-                <p>Started in 2024, YumBai CLT is on a mission to introduce the bold, aromatic, and savory flavors of Cambodian street food to Charlotte and the surrounding areas. "Yum Bai" translates to "Eat Rice" or "Let's Eat" in Khmer, and that's exactly what we want to share with our community.</p>
-                <br>
-                <p>From our signature lemongrass skewers to refreshing papaya salads, everything is made from scratch using traditional family recipes. Whether you're in South End, NoDa, or out in the suburbs, keep an eye out for the truck!</p>
-            </div>
-        </div>
+    <section class="hero">
+        <h1>YumBai CLT</h1>
+        <p>Authentic Khmer Cambodian Street Food in Charlotte, NC. Bringing the vibrant flavors of the streets straight to you since 2024.</p>
+        <a href="#menu" class="btn">View Our Menu</a>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" style="background-color: #f0f0f0;">
-        <h2 class="section-title">On The Grill</h2>
+    <section id="about">
+        <h2>Our Story</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-muted); font-size: 1.1rem;">
+            Founded in 2024, YumBai CLT is dedicated to sharing the rich, bold, and authentic tastes of Cambodia with the Charlotte community. Whether you're craving our signature beef sticks or our perfectly paired combos, we serve up street food exactly how it's meant to be enjoyed.
+        </p>
+    </section>
+
+    <section id="menu">
+        <h2>The Menu</h2>
         <div class="menu-grid">
             
             <div class="menu-item">
-                <h4>Sach Ko Ang <span class="price">$12</span></h4>
-                <p>Classic Cambodian beef skewers marinated in kroeung (lemongrass paste), grilled over open flames. Served with pickled papaya.</p>
+                <img src="Beef Sticks Transparent.jpg" alt="Cambodian Beef Sticks" onerror="this.src='https://via.placeholder.com/400x250/1e1e1e/D4AF37?text=Beef+Sticks'">
+                <div class="menu-content">
+                    <h3>Signature Beef Sticks</h3>
+                    <p>Authentic marinated Khmer beef skewers, grilled to perfection over an open flame with traditional spices.</p>
+                    <div class="allergy-warning">
+                        <strong>Allergy Info:</strong> Contains soy and lemongrass. Prepared in a facility that handles peanuts.
+                    </div>
+                </div>
             </div>
 
             <div class="menu-item">
-                <h4>Bok Lahong <span class="price">$10</span></h4>
-                <p>Spicy green papaya salad pounded in a mortar and pestle with tomatoes, long beans, peanuts, lime, and fish sauce.</p>
-            </div>
-
-            <div class="menu-item">
-                <h4>Slaab Moan Baok <span class="price">$14</span></h4>
-                <p>Crispy stuffed chicken wings filled with glass noodles, minced pork, and traditional spices. Served with sweet chili dipping sauce.</p>
-            </div>
-
-            <div class="menu-item">
-                <h4>Lort Cha <span class="price">$13</span></h4>
-                <p>Stir-fried short rice noodles (pin noodles) with bean sprouts, chives, topped with a fried egg and our signature sweet soy sauce.</p>
+                <img src="Combo 1 Transparent.jpg" alt="Combo 1" onerror="this.src='https://via.placeholder.com/400x250/1e1e1e/D4AF37?text=Combo+1'">
+                <div class="menu-content">
+                    <h3>Combo 1</h3>
+                    <p>The perfect pairing. Includes our signature street meats alongside traditional fragrant rice and fresh pickled papaya.</p>
+                    <div class="allergy-warning">
+                        <strong>Allergy Info:</strong> Contains fish sauce. 
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Schedule Section -->
-    <section id="schedule">
-        <h2 class="section-title">Weekly Route</h2>
-        <div class="schedule-container">
-            <div class="schedule-row">
-                <div class="day">Thursday</div>
-                <div class="location">Resident Culture Brewing (Plaza Midwood)</div>
-                <div class="time">5:00 PM - 9:00 PM</div>
-            </div>
-            <div class="schedule-row">
-                <div class="day">Friday</div>
-                <div class="location">Sycamore Brewing (South End)</div>
-                <div class="time">4:00 PM - 10:00 PM</div>
-            </div>
-            <div class="schedule-row">
-                <div class="day">Saturday</div>
-                <div class="location">Charlotte Regional Farmers Market</div>
-                <div class="time">8:00 AM - 2:00 PM</div>
-            </div>
-            <div class="schedule-row">
-                <div class="day">Sunday</div>
-                <div class="location">NoDa Brewing Company</div>
-                <div class="time">12:00 PM - 6:00 PM</div>
-            </div>
+    <footer id="social">
+        <div class="social-links">
+            <a href="https://www.facebook.com/p/YumBai-CLT-61563875877132/" target="_blank">Facebook</a>
+            <a href="http://www.tiktok.com/@yumbaiclt" target="_blank">TikTok</a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <h2>YumBai CLT</h2>
-        <p>Charlotte, NC & Surrounding Areas</p>
-        <p style="margin: 15px 0;">booking@yumbaiclt.com | (555) 123-4567</p>
-        <p><small>&copy; 2026 YumBai CLT. All Rights Reserved.</small></p>
+        <p class="footer-text">&copy; 2026 YumBai CLT. All rights reserved. Charlotte, NC.</p>
     </footer>
 
 </body>
