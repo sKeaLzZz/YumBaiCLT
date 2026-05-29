@@ -55,6 +55,7 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            flex-wrap: wrap; /* Added for mobile menu wrapping */
         }
 
         .brand {
@@ -64,9 +65,22 @@
         }
 
         .brand img {
-            max-height: 85px; /* Increased size */
+            max-height: 85px;
             background-color: transparent;
             object-fit: contain;
+        }
+
+        /* Mobile Menu Setup */
+        .menu-toggle {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: var(--gold);
+            cursor: pointer;
+            user-select: none;
         }
 
         .nav-links {
@@ -274,31 +288,54 @@
         }
 
         .footer-logo img {
-            max-height: 250px; /* Increased size */
+            max-height: 250px;
             background-color: transparent;
             object-fit: contain;
         }
 
         .footer-contact {
             margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .footer-contact a {
             color: var(--text-main);
             text-decoration: none;
-            margin: 0 1rem;
             font-weight: 700;
+            padding: 0 0.5rem;
         }
 
         .footer-contact a:hover {
             color: var(--gold);
         }
 
-        /* Responsive */
+        /* Responsive Breakpoints */
         @media (max-width: 900px) {
             .hero { grid-template-columns: 1fr; text-align: center; padding-top: 4rem; }
             .hero-text p { margin: 0 auto 2rem; }
-            .nav-links { display: none; }
+            
+            /* Enable Hamburger Menu */
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--bg-base);
+                padding: 1rem 0;
+            }
+            .nav-links a {
+                padding: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+            .menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -310,9 +347,13 @@
 
     <nav>
         <a href="#" class="brand">
-            <!-- Using your white transparent circle logo for optimal dark mode contrast -->
             <img src="YumBai CLT Circle Logo Transparent White.png" alt="YumBai CLT">
         </a>
+        
+        <!-- CSS Only Hamburger Menu -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        
         <div class="nav-links">
             <a href="#combos">Combos</a>
             <a href="#menu">Menu</a>
@@ -452,12 +493,10 @@
 
     <footer id="contact">
         <div class="footer-logo">
-            <!-- Utilizing the "Hope" mascot logo for the large footer area -->
             <img src="YumBai CLT Hope Transparent Logo.png" alt="YumBai CLT Authentic Street Food">
         </div>
         <div class="footer-contact">
-            <!-- Corrected href protocol to tel: and updated display text -->
-            <a href="tel:17046093104">Call Us</a>
+            <a href="tel:17046093104">Call Us!</a>
             <a href="mailto:YumBaiCLT@gmail.com">YumBaiCLT@gmail.com</a>
             <a href="https://www.facebook.com/p/YumBai-CLT-61563875877132/" target="_blank">Facebook</a>
             <a href="https://www.tiktok.com/@yumbaiclt" target="_blank">TikTok</a>
