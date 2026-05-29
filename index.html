@@ -48,7 +48,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             background-color: rgba(15, 15, 15, 0.9);
             backdrop-filter: blur(10px);
             position: sticky;
@@ -58,16 +58,21 @@
         }
 
         .brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--gold);
+            display: flex;
+            align-items: center;
             text-decoration: none;
+        }
+
+        .brand img {
+            max-height: 60px;
+            background-color: transparent;
+            object-fit: contain;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -198,6 +203,7 @@
             height: 100%;
             object-fit: contain;
             filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+            background-color: transparent;
         }
 
         .menu-card h3 {
@@ -262,10 +268,15 @@
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-logo img {
+            max-height: 200px;
+            background-color: transparent;
+            object-fit: contain;
         }
 
         .footer-contact {
@@ -287,7 +298,7 @@
         @media (max-width: 900px) {
             .hero { grid-template-columns: 1fr; text-align: center; padding-top: 4rem; }
             .hero-text p { margin: 0 auto 2rem; }
-            .nav-links { display: none; } /* Mobile menu logic would go here */
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -298,7 +309,10 @@
     </div>
 
     <nav>
-        <a href="#" class="brand">YumBai CLT</a>
+        <a href="#" class="brand">
+            <!-- Using your white transparent circle logo for optimal dark mode contrast -->
+            <img src="YumBai CLT Circle Logo Transparent White.jpg" alt="YumBai CLT">
+        </a>
         <div class="nav-links">
             <a href="#combos">Combos</a>
             <a href="#alacarte">Menu</a>
@@ -437,11 +451,14 @@
     </section>
 
     <footer id="contact">
-        <div class="footer-logo">YumBai CLT</div>
+        <div class="footer-logo">
+            <!-- Utilizing the "Hope" mascot logo for the large footer area -->
+            <img src="YumBai CLT Hope Transparent Logo.jpg" alt="YumBai CLT Authentic Street Food">
+        </div>
         <div class="footer-contact">
             <a href="mailto:YumBaiCLT@gmail.com">YumBaiCLT@gmail.com</a>
-            <a href="https://facebook.com" target="_blank">FB: YumBai CLT</a>
-            <a href="https://instagram.com" target="_blank">IG: YumBai_CLT</a>
+            <a href="https://www.facebook.com/p/YumBai-CLT-61563875877132/" target="_blank">Facebook</a>
+            <a href="http://www.tiktok.com/@yumbaiclt" target="_blank">TikTok</a>
         </div>
         <p style="color: #666; font-size: 0.85rem;">&copy; 2026 YumBai CLT. Charlotte, NC.</p>
     </footer>
